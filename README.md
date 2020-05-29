@@ -59,9 +59,48 @@
  
   - 定义
   
-    用一个单独的类来创造实例
+    用一个单独的类来创造实例。
+    
+  - 优缺点
+  
+    - 优点
+    
+      1、客户端创建对象时只需要记住特定的参数，而不需要记住复杂的类名，也不用关注实现的过程。(实现了封装和部分解耦)
+    
+      2、创建对象不需要单独实例化，而是通过工厂类直接获取示例(实现复用)
+
+    - 缺点
+    
+      1、实例化对象的逻辑全部封装在一个工厂类里，每次需求变化都要单独修改工厂类(**违反了开闭原则**)，而且出了异常可能没法正常工作。
+      
+      2、不方便扩展子类
     
   - 代码示例
   
     - [简单计算器](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/SimpleFactory.h)
     - [商家促销计算器](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/SimpleFactory_II.h)
+    
+ [BACK TO TOP ⬆︎](#DesignPattern-设计模式)
+
+### 策略模式
+
+ - 定义
+ 
+   **定义了算法家族并分别封装，让算法之间可以互相替换。此模式让算法的变化不会影响到使用算法的用户。**
+   策略模式是一种定义一系列算法的方法。所有的算法完成的是相同的工作，只是实现不同。
+   它可以以相同的方式调用所有的算法，减少了各种算法类与使用算法类之间的耦合。
+   
+ - 优缺点
+ 
+   - 优点 
+   
+     1、简化了单元测试，因为每个算法都有自己的类，可以通过自己的接口单独调试。
+     
+     2、只要在分析过程中发现需要在不同时间应用不同的业务规则，可以考虑使用策略模式处理这种变化的可能性。
+     
+ - 代码示例
+     
+    - [商家促销计算器](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/Strategy.h)
+    - [商家促销计算器 （与简单工厂结合）](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/Strategy_II.h)
+    
+ [BACK TO TOP ⬆︎](#DesignPattern-设计模式)
