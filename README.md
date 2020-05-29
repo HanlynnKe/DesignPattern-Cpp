@@ -9,6 +9,7 @@
    - [简单工厂模式](#简单工厂模式)
    - [策略模式](#策略模式)
    - [装饰模式](#装饰模式)
+   - [代理模式](#代理模式)
 
 ## 原则篇
 
@@ -119,6 +120,7 @@
    Component定义一个对象接口，可以给这些对象动态地添加职责。ConcreteComponent是定义了一个具体的对象，也可以对这个对象添加一些职责。
    Decorator，装饰抽象类，继承了Component，从外类来扩展Component类的功能，但对于Component来说，是无需知道Decorator的存在的。
    ConcreteDecorator是具体的装饰对象，起到给Component添加职责的功能。
+   
    *如果只有一个ConcreteComponent类而没有抽象的Component类，那么Decorator类可以是ConcreteComponent的一个子类*
    *同理，如果只有一个ConcreteDecorator类，没必要建立单独的Decorator类，可以把Decorator和ConcreteDecorator的责任合并为一个类*
    
@@ -133,5 +135,28 @@
  - 代码示例
      
     - [服装搭配](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/Decorator.h)
+    
+ [BACK TO TOP ⬆︎](#DesignPattern-设计模式)
+
+### 代理模式
+
+ - 定义
+ 
+   **为其他对象提供一种代理以控制这个对象的访问。** 代理就是真实对象的代表。
+   
+- 应用场景
+
+   1、**远程代理** ，也就是为一个对象在不同的地址空间提供局部代表。这样可以隐藏一个对象存在于不同地址空间的事实。
+   
+   2、**虚拟代理** ，根据需要创建开销很大的对象，通过它来存放示例化需要很长时间的真实对象。
+   
+   3、**安全代理** ，用来控制真实对象访问时的权限。
+   
+   4、**智能指引** ，指当调用真实对象时，代理处理另外一些事。
+    
+  
+ - 代码示例
+     
+    - [代理爱情](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/Proxy.h)
     
  [BACK TO TOP ⬆︎](#DesignPattern-设计模式)
