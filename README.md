@@ -10,6 +10,7 @@
    - [策略模式](#策略模式)
    - [装饰模式](#装饰模式)
    - [代理模式](#代理模式)
+   - [工厂方法模式](#工厂方法模式)
 
 ## 原则篇
 
@@ -80,7 +81,7 @@
     
   - 代码示例
   
-    - [简单计算器](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/SimpleFactory.h)
+    - [简单计算器（简单工厂实现）](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/SimpleFactory.h)
     - [商家促销计算器](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/SimpleFactory_II.h)
     
  [BACK TO TOP ⬆︎](#DesignPattern-设计模式)
@@ -158,5 +159,33 @@
  - 代码示例
      
     - [代理爱情](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/Proxy.h)
+    
+ [BACK TO TOP ⬆︎](#DesignPattern-设计模式)
+
+ ### 工厂方法模式
+ 
+  - 定义
+  
+    定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
+    
+  - 补充
+  
+    工厂方法模式实现时，客户端需要决定实例化哪一个工厂来实现某一类，选择判断的问题还是存在的。
+    工厂方法把简单工厂的内部逻辑判断转移到客户端代码来进行。
+    
+  - 优缺点
+  
+    - 优点
+    
+      克服了简单工厂模式违背开放封闭原则的缺点，同时保持了封装对象创建过程的优点
+
+    - 缺点
+    
+      每增加一个产品就需要增加一个产品工厂的类，增加了额外的开发量。
+    
+  - 代码示例
+  
+    - [简单计算器（工厂方法实现）](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/FactoryMethod.h)
+    - [雷锋工厂](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/FactoryMethod_II.h)
     
  [BACK TO TOP ⬆︎](#DesignPattern-设计模式)
