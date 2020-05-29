@@ -7,6 +7,8 @@
    - [里氏代换原则](#里氏代换原则)
  - [模式篇](#模式篇)
    - [简单工厂模式](#简单工厂模式)
+   - [策略模式](#策略模式)
+   - [装饰模式](#装饰模式)
 
 ## 原则篇
 
@@ -73,7 +75,7 @@
     
       1、实例化对象的逻辑全部封装在一个工厂类里，每次需求变化都要单独修改工厂类(**违反了开闭原则**)，而且出了异常可能没法正常工作。
       
-      2、不方便扩展子类
+      2、不方便扩展子类。
     
   - 代码示例
   
@@ -102,5 +104,34 @@
      
     - [商家促销计算器](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/Strategy.h)
     - [商家促销计算器 （与简单工厂结合）](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/Strategy_II.h)
+    
+ [BACK TO TOP ⬆︎](#DesignPattern-设计模式)
+
+### 装饰模式
+
+ - 定义
+ 
+   **动态地给一个对象添加额外的职责，就增加功能来说，装饰模式比生成子类更为灵活。**
+   装饰模式利用实例方法对对象进行包装，每个装饰对象的实现与如何使用这个对象分离开，每个装饰对象只关心自己的功能，不需要关心如何被添加到对象链中。
+   
+ - 补充
+ 
+   Component定义一个对象接口，可以给这些对象动态地添加职责。ConcreteComponent是定义了一个具体的对象，也可以对这个对象添加一些职责。
+   Decorator，装饰抽象类，继承了Component，从外类来扩展Component类的功能，但对于Component来说，是无需知道Decorator的存在的。
+   ConcreteDecorator是具体的装饰对象，起到给Component添加职责的功能。
+   *如果只有一个ConcreteComponent类而没有抽象的Component类，那么Decorator类可以是ConcreteComponent的一个子类*
+   *同理，如果只有一个ConcreteDecorator类，没必要建立单独的Decorator类，可以把Decorator和ConcreteDecorator的责任合并为一个类*
+   
+ - 优缺点
+ 
+   - 优点 
+   
+     1、有效地把类的核心职责和装饰功能区分开。
+     
+     2、去除相关类中重复的装饰逻辑。
+     
+ - 代码示例
+     
+    - [服装搭配](https://github.com/HanlynnKe/DesignPattern-cpp/blob/master/Decorator.h)
     
  [BACK TO TOP ⬆︎](#DesignPattern-设计模式)
